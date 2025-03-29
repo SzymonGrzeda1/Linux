@@ -20,3 +20,16 @@ sysctl -p
 passwd oracle
 
 #6. create required directories
+
+mkdir -p /u01/app/oracle/product/19x/db_1/
+mkdir -p /u02/oracle/oradata
+mkdir -p /u02/oracle/FRA
+mkdir -p /backup/patch/
+
+chown -R oracle:oinstall /u02/
+chown -R oracle:oinstall /u01/
+chown -R oracle:oinstall /backup
+
+chmod -R 775 /u01/
+chmod -R 775 /u02/
+chmod -R 775 /backup
