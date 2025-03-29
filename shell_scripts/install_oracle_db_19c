@@ -1,0 +1,19 @@
+#1. Check current OS details
+
+cat /etc/redhat-release
+
+#check kernel correct
+uname -a
+
+#2. Preinstallation package (help oracle user creation and package installation)
+#root user
+
+sudo yum install -y oracle-database-preinstall-19c 
+
+#3 crosscheck Kernel parameter
+sudo sysctl -p
+
+#4 set Oracle password
+passwd oracle
+
+#5 create required directories
