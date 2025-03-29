@@ -1,0 +1,2 @@
+sudo fdisk -l #Make sure your USB drive is plugged in
+sudo dd bs=4M if=/home/hadoop/OracleLinux-R8-U10-x86_64-boot.iso of=/dev/sdb status=progress oflag=sync #if="iso file" of="name of device"
