@@ -1,3 +1,5 @@
+##prepare zip file with oracle database
+
 #1. login as root user
 su
 
@@ -21,7 +23,7 @@ passwd oracle
 
 #6. create required directories
 
-mkdir -p /u01/app/oracle/product/19x/db_1/
+mkdir -p /u01/app/oracle/product/19c/db_1/
 mkdir -p /u02/oracle/oradata
 mkdir -p /u02/oracle/FRA
 mkdir -p /backup/patch/
@@ -46,3 +48,37 @@ oracle soft stack 10240
 oracle hard stack 32768
 oracle hard memlock 134217728
 oracle soft memlock 134217728
+
+#8. Disable firewall (temporally)
+
+systemctl stop firewalld
+systemctl disable firewalld
+
+#9. set .bash_profile (login to oracle user)
+su - oracle 
+
+vi .bash_profile
+ 
+export TMPDIR=$TMP
+export ORACLE_BASE=/u01/app/oracle
+export ORACLE_HOME=/u01/app/oracle/product/19c/db_1
+export ORACLE_SID=orcl
+export ORACLE_TERM=xterm
+export BASE_PATH=/usr/sbin:$PATH
+export PATH=$ORACLE_HOME/bin:$BASE_PATH
+export PATH=$ORACLE_HOME/OPatch:$PATH
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+export CLASS_PATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib$ORACLE_HOME/rdbms/jlib
+
+. .bash_profile
+
+env |grep ORA
+
+#check path exists
+cd $ORACLE_HOME
+
+
+#10. copy DB software and patches (root user)
+su
+
+
