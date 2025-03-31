@@ -1,0 +1,2 @@
+#disable firewalld
+sudo systemctl disable firewalld
