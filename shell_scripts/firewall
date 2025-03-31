@@ -1,2 +1,5 @@
 #disable firewalld
 sudo systemctl disable firewalld
+
+
+#https://help.ovhcloud.com/csm/en-dedicated-servers-firewall-iptables?id=kb_article_view&sysparm_article=KB0043436
