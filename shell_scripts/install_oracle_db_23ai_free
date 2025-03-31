@@ -1,0 +1,11 @@
+ dnf localinstall -y oracle-database-preinstall-23ai-1.0-2.el9.x86_64.rpm
+
+ dnf localinstall -y oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
+
+ export ORACLE_SID=FREE
+ export ORACLE_ASK=NO
+ export ORACLE_HOME=/opt/oracle/product/23ai/dbhomeFree/
+ cd $ORACLE_HOME/bin
+
+ #test login as sys
+ ./sqlplus sys@localhost:1521/FREEPDB1 as sysdba
