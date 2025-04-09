@@ -1,0 +1,2 @@
+#find file by name
+find /path/ -type f -name "file_name"
