@@ -1,0 +1,5 @@
+#running processes 
+ps aux
+
+#find process by name
+ps aux | grep -i 'search-term'
