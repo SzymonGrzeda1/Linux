@@ -1,2 +1,6 @@
 #check if a process listens on a TCP or UDP port
 netstat -tuplen
+
+
+#list of open ports
+netstat -lntu
