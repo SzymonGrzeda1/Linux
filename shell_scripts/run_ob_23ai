@@ -1,0 +1,14 @@
+#set env variable
+export ORACLE_SID=FREE 
+export ORAENV_ASK=NO 
+. /opt/oracle/product/23ai/dbhomeFree/bin/oraenv
+
+cd $ORACLE_HOME/bin
+lsnrctl status
+lsnrctl start
+
+./sqlplus system@dbhost.example.com:1521/FREEPDB1
+
+./sqlplus 
+sys as sysdba
+startu
