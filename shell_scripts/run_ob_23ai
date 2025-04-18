@@ -12,3 +12,5 @@ lsnrctl start
 ./sqlplus 
 sys as sysdba
 startu
+//in sql plus
+SET LINESIZE 200
